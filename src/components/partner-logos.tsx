@@ -5,7 +5,8 @@ const partners = [
   { name: "Startup India", logo: <Icons.startupIndia className="h-8 max-w-[150px] w-full text-muted-foreground" /> },
   { name: "Google Cloud", logo: <Icons.googleCloud className="h-8 max-w-[150px] w-full text-muted-foreground" /> },
   { name: "AWS", logo: <Icons.aws className="h-10 max-w-[100px] w-full text-muted-foreground" /> },
-  { name: "Azure", logo: <Icons.azure className="h-8 max-w-[150px] w-full text-muted-foreground" /> },
+  { name: "Microsoft Azure", logo: <Icons.azure className="h-8 max-w-[150px] w-full text-muted-foreground" /> },
+  { name: "OpenAI", logo: <Icons.openAI className="h-8 max-w-[150px] w-full text-muted-foreground" /> },
 ];
 
 export function PartnerLogos() {
