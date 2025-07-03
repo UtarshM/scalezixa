@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
@@ -27,7 +26,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
@@ -35,6 +34,7 @@ export default function RootLayout({
         className={cn(
           'min-h-screen bg-background font-body antialiased'
         )}
+        suppressHydrationWarning={true}
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
           <Header />

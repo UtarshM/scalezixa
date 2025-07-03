@@ -1,4 +1,3 @@
-
 import type { Config } from 'tailwindcss';
 
 const config = {
@@ -20,8 +19,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        body: ['Roboto', 'sans-serif'],
-        headline: ['Montserrat', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        headline: ['Space Grotesk', 'sans-serif'],
       },
       colors: {
         border: 'hsl(var(--border))',
