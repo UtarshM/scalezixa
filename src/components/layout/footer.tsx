@@ -6,6 +6,7 @@ import { Icons } from "@/components/icons";
 export function Footer() {
   const navLinks = [
     { name: "Courses", href: "/courses" },
+    { name: "Workshops", href: "/workshops" },
     { name: "Gallery", href: "/gallery" },
     { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },

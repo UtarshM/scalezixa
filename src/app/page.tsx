@@ -186,6 +186,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="free-workshop" className="w-full py-16 md:py-24 bg-primary/5">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="bg-card p-8 rounded-lg shadow-lg text-center border">
+            <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Jumpstart Your Journey with a Free Workshop!
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+              Join our live, hands-on "Introduction to Generative AI" workshop. No cost, no commitment. Just learning.
+            </p>
+            <div className="mt-8">
+              <Button asChild size="lg">
+                <Link href="/workshops/intro-to-generative-ai">
+                  Register for Free <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="w-full py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

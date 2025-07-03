@@ -18,6 +18,26 @@ export type Course = {
   objectives: string[];
 };
 
+export type Workshop = {
+  slug: string;
+  title: string;
+  type: 'Free' | 'Paid';
+  description: string;
+  date: string;
+  duration: string;
+  image: string;
+  instructor: {
+    name: string;
+    title: string;
+    image: string;
+  };
+  topics: {
+    title: string;
+    content: string;
+  }[];
+  takeaways: string[];
+};
+
 export type FAQ = {
   question: string;
   answer: string;
@@ -52,10 +72,10 @@ export const courses: Course[] = [
       image: 'https://placehold.co/100x100',
     },
     modules: [
-      { title: 'Introduction to AI', content: 'History, definitions, and key concepts.' },
-      { title: 'Types of AI', content: 'Narrow, General, and Super AI.' },
-      { title: 'Search Algorithms', content: 'Exploring foundational search techniques.' },
-      { title: 'Introduction to Machine Learning', content: 'Supervised vs. Unsupervised learning.' },
+      { title: 'Introduction to AI', content: 'Explore the history of AI, from early concepts to modern breakthroughs. We will define key terms, discuss the Turing Test, and look at real-world examples of AI that you use every day.' },
+      { title: 'Types of AI', content: 'Learn to distinguish between Artificial Narrow Intelligence (ANI), Artificial General Intelligence (AGI), and Artificial Superintelligence (ASI). We will also cover the difference between symbolic AI and machine learning.' },
+      { title: 'Foundational Search Algorithms', content: 'Dive into classic AI problem-solving techniques like Breadth-First Search, Depth-First Search, and the A* algorithm. Understand how these are applied in games, logistics, and more.' },
+      { title: 'Introduction to Machine Learning', content: 'Get a clear overview of the core concepts of supervised, unsupervised, and reinforcement learning. You will build your first simple linear regression model to predict a value based on data.' },
     ],
     objectives: [
       'Understand the core concepts and history of AI.',
@@ -77,10 +97,10 @@ export const courses: Course[] = [
       image: 'https://placehold.co/100x100',
     },
     modules: [
-      { title: 'Regression and Classification', content: 'Linear models, logistic regression, and more.' },
-      { title: 'Decision Trees and Ensemble Methods', content: 'Random Forests and Gradient Boosting.' },
-      { title: 'Unsupervised Learning', content: 'Clustering with K-Means, PCA.' },
-      { title: 'Model Evaluation and Tuning', content: 'Cross-validation and hyperparameter optimization.' },
+      { title: 'Regression and Classification', content: 'Go beyond the basics to build and evaluate robust linear and logistic regression models. We will cover feature engineering, loss functions, and the mechanics of gradient descent.' },
+      { title: 'Decision Trees and Ensemble Methods', content: 'Master powerful techniques like Random Forests and Gradient Boosting Machines (XGBoost, LightGBM). Understand how ensembling multiple models leads to superior performance.' },
+      { title: 'Unsupervised Learning in Depth', content: 'Discover hidden patterns in your data. Implement clustering algorithms like K-Means and Hierarchical Clustering, and reduce dimensionality with Principal Component Analysis (PCA).' },
+      { title: 'Model Evaluation and Tuning', content: 'Learn professional-grade techniques for ensuring your models are robust and performant. We will cover k-fold cross-validation, and hyperparameter tuning using grid search, random search, and Bayesian optimization.' },
     ],
     objectives: [
       'Implement various ML models from scratch.',
@@ -102,10 +122,10 @@ export const courses: Course[] = [
       image: 'https://placehold.co/100x100',
     },
     modules: [
-      { title: 'Neural Networks and Backpropagation', content: 'The building blocks of deep learning.' },
-      { title: 'Convolutional Neural Networks (CNNs)', content: 'For image recognition and computer vision.' },
-      { title: 'Recurrent Neural Networks (RNNs)', content: 'For sequence data like text and time series.' },
-      { title: 'Transformers and Attention', content: 'The state-of-the-art in NLP.' },
+      { title: 'Neural Networks and Backpropagation', content: 'Build a solid foundation by understanding the mathematical underpinnings of deep learning. We will cover the architecture of a neuron, various activation functions, and how networks learn via backpropagation and gradient descent.' },
+      { title: 'Convolutional Neural Networks (CNNs)', content: 'Become proficient in the go-to architecture for computer vision. You will learn about convolutions, pooling layers, and build powerful CNNs for image classification and object detection from the ground up.' },
+      { title: 'Recurrent Neural Networks (RNNs)', content: 'Master the art of processing sequential data. This module covers the challenges of long-term dependencies and how architectures like LSTMs and GRUs solve them for tasks in NLP and time-series analysis.' },
+      { title: 'Transformers and Attention', content: 'Dive into the state-of-the-art architecture that powers modern LLMs like GPT. You will deeply understand the self-attention mechanism and build a functional transformer block from scratch.' },
     ],
     objectives: [
       'Design and train neural networks for various tasks.',
@@ -114,30 +134,60 @@ export const courses: Course[] = [
       'Deploy a deep learning model to a production-like environment.',
     ],
   },
+];
+
+export const workshops: Workshop[] = [
   {
-    slug: 'data-science-for-business',
-    title: 'Data Science for Business',
-    description: 'Learn how to leverage data science techniques to drive business value, from data collection to strategic insights.',
-    level: 'Intermediate',
-    duration: '6 Weeks',
+    slug: 'intro-to-generative-ai',
+    title: 'Introduction to Generative AI',
+    type: 'Free',
+    description: 'A live, hands-on workshop covering the fundamentals of generative AI, from large language models to image generation.',
+    date: 'October 26, 2024',
+    duration: '3 Hours',
     image: 'https://placehold.co/600x400',
     instructor: {
-      name: 'Mark Chen',
-      title: 'Principal Data Strategist',
+      name: 'Dr. Evelyn Reed',
+      title: 'Lead AI Scientist',
       image: 'https://placehold.co/100x100',
     },
-    modules: [
-      { title: 'The Data Science Lifecycle', content: 'From business understanding to deployment.' },
-      { title: 'Data Wrangling and EDA', content: 'Cleaning data and exploratory data analysis.' },
-      { title: 'Business Intelligence and Visualization', content: 'Creating impactful dashboards.' },
-      { title: 'Predictive Modeling for Business', content: 'Forecasting, churn prediction, etc.' },
+    topics: [
+      { title: 'What is Generative AI?', content: 'A clear, concise overview of what makes generative models different from other types of AI. We will explore key concepts like prompts, tokens, and context windows.' },
+      { title: 'How Large Language Models (LLMs) Work', content: 'A simplified explanation of the transformer architecture and the self-attention mechanism that powers models like GPT.' },
+      { title: 'Hands-On: Prompt Engineering', content: 'Learn the art and science of writing effective prompts to get the best results from LLMs. You will participate in live exercises to hone your skills.' },
+      { title: 'Introduction to AI Image Generation', content: 'Explore how diffusion models create stunning images from text prompts and the creative possibilities they unlock.' },
     ],
-    objectives: [
-      'Frame business problems as data science tasks.',
-      'Perform data analysis and create meaningful visualizations.',
-      'Build predictive models to solve business challenges.',
-      'Communicate data-driven insights effectively to stakeholders.',
+    takeaways: [
+      'A solid understanding of what Generative AI is and how it works.',
+      'Practical skills in prompt engineering for text and image models.',
+      'Code and resources to continue your learning journey.',
+      'A certificate of completion for attending the live session.',
+    ]
+  },
+  {
+    slug: 'advanced-gans',
+    title: 'Advanced GANs for Image Synthesis',
+    type: 'Paid',
+    description: 'A deep-dive workshop for developers on Generative Adversarial Networks (GANs), focusing on cutting-edge architectures for high-fidelity image creation.',
+    date: 'November 9, 2024',
+    duration: '6 Hours (2 sessions)',
+    image: 'https://placehold.co/600x400',
+    instructor: {
+      name: 'Dr. Anya Sharma',
+      title: 'Deep Learning Specialist',
+      image: 'https://placehold.co/100x100',
+    },
+    topics: [
+      { title: 'Revisiting the GAN Framework', content: 'A quick refresher on the generator vs. discriminator dynamic, and common challenges like mode collapse and training instability.' },
+      { title: 'Architectures for Quality: StyleGAN', content: 'A detailed walkthrough of the StyleGAN architecture, understanding how it achieves high-resolution, photorealistic results through style-based generation.' },
+      { title: 'Conditional GANs (cGANs)', content: 'Learn to control the output of your GAN by providing conditional inputs, such as class labels or text descriptions.' },
+      { title: 'Practical Implementation with PyTorch', content: 'A hands-on coding session where you will implement and train a custom GAN on a real-world dataset, with expert guidance.' },
     ],
+    takeaways: [
+      'The ability to implement and train advanced GAN architectures.',
+      'An understanding of the latest techniques for stable GAN training.',
+      'A portfolio-ready project demonstrating your skills in AI image synthesis.',
+      'Access to a repository of code templates and pre-trained models.',
+    ]
   },
 ];
 
@@ -186,7 +236,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     name: 'Priya Patel',
-    title: 'Data Analyst at Finance Inc.',
+    title: 'BSc CompSci Student',
     quote: 'As someone from a non-CS background, I found the AI Fundamentals course incredibly accessible and well-structured. It gave me the confidence to start applying AI concepts in my work.',
     image: 'https://placehold.co/100x100',
   },
@@ -198,8 +248,8 @@ export const testimonials: Testimonial[] = [
   },
   {
     name: 'Samantha Lee',
-    title: 'Product Manager',
-    quote: 'The Data Science for Business course helped me bridge the gap between technical teams and business strategy. I can now communicate much more effectively with our data scientists.',
+    title: 'AI Product Manager',
+    quote: 'The free workshop on Generative AI was the perfect introduction. It was practical, engaging, and gave me the clarity I needed to dive deeper into the field. I immediately signed up for a full course!',
     image: 'https://placehold.co/100x100',
   },
 ];

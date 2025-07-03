@@ -18,6 +18,7 @@ export function Header() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Courses", href: "/courses" },
+    { name: "Workshops", href: "/workshops" },
     { name: "Gallery", href: "/gallery" },
     { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
@@ -29,7 +30,7 @@ export function Header() {
       onClick={() => setIsMobileMenuOpen(false)}
       className={cn(
         "text-sm font-medium transition-colors hover:text-primary",
-        pathname === href ? "text-primary" : "text-muted-foreground"
+        pathname.startsWith(href) && href !== '/' || pathname === href ? "text-primary" : "text-muted-foreground"
       )}
     >
       {children}
@@ -78,7 +79,7 @@ export function Header() {
                        <Link key={link.href} href={link.href} onClick={() => setIsMobileMenuOpen(false)}
                           className={cn(
                              "text-lg font-medium transition-colors hover:text-primary",
-                             pathname === link.href ? "text-primary" : "text-foreground"
+                              pathname.startsWith(link.href) && link.href !== '/' || pathname === link.href ? "text-primary" : "text-foreground"
                           )}
                        >
                           {link.name}

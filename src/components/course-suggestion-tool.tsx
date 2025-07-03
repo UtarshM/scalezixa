@@ -17,11 +17,8 @@ import Link from "next/link";
 import { Badge } from "./ui/badge";
 
 const colleges = [
-  { value: "computer-science", label: "Computer Science / Engineering" },
-  { value: "business-finance", label: "Business / Finance" },
-  { value: "natural-sciences", label: "Natural Sciences (Biology, Physics)" },
-  { value: "humanities-arts", label: "Humanities / Arts" },
-  { value: "other", label: "Other" },
+  { value: "computer-science-engg", label: "Computer Science / Engineering" },
+  { value: "computer-science-bsc", label: "BSc Computer Science" },
 ];
 
 type SuggestedCourse = typeof courses[0];
@@ -41,29 +38,8 @@ export function CourseSuggestionTool() {
 
     // Simulate AI processing delay
     setTimeout(() => {
-      let recommendations: SuggestedCourse[] = [];
-      switch (selectedCollege) {
-        case "computer-science":
-          recommendations = courses.filter((c) =>
-            ["ai-fundamentals", "machine-learning-mastery", "deep-learning-foundations"].includes(c.slug)
-          );
-          break;
-        case "business-finance":
-          recommendations = courses.filter((c) =>
-            ["ai-fundamentals", "data-science-for-business"].includes(c.slug)
-          );
-          break;
-        case "natural-sciences":
-          recommendations = courses.filter((c) =>
-            ["ai-fundamentals", "machine-learning-mastery"].includes(c.slug)
-          );
-          break;
-        case "humanities-arts":
-        case "other":
-        default:
-          recommendations = courses.filter((c) => ["ai-fundamentals"].includes(c.slug));
-          break;
-      }
+      // Since all fields are CS-related, we recommend all available courses.
+      const recommendations: SuggestedCourse[] = courses;
       setSuggestedCourses(recommendations);
       setIsLoading(false);
     }, 1500);
@@ -76,7 +52,7 @@ export function CourseSuggestionTool() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Select onValueChange={setSelectedCollege}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select your school/college..." />
+                <SelectValue placeholder="Select your field of study..." />
               </SelectTrigger>
               <SelectContent>
                 {colleges.map((college) => (
