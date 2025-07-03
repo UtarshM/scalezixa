@@ -6,13 +6,15 @@ import {
   BrainCircuit,
   GraduationCap,
   Star,
+  Video,
+  Combine,
+  Bot as BotIcon,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -22,6 +24,7 @@ import { Badge } from '@/components/ui/badge';
 import { courses, testimonials } from '@/lib/content';
 import { CourseSuggestionTool } from '@/components/course-suggestion-tool';
 import { Icons } from '@/components/icons';
+import { PartnerLogos } from '@/components/partner-logos';
 
 export default function Home() {
   return (
@@ -57,6 +60,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <PartnerLogos />
 
       <section
         id="suggestion-tool"
@@ -182,6 +187,87 @@ export default function Home() {
                 </CardFooter>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="latest-ai" className="w-full py-16 md:py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col items-center text-center">
+            <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Explore the AI Frontier
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+              We stay on top of the latest advancements in AI, so you can too.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="flex flex-col">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Video className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="font-headline text-xl">
+                    Generative Video
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-muted-foreground">
+                  Dive into the world of AI-powered video creation. Learn about the models that are turning text and images into dynamic video content.
+                </p>
+              </CardContent>
+              <CardFooter>
+                 <Button asChild variant="secondary" size="sm">
+                    <Link href="/workshops">Explore Workshops</Link>
+                  </Button>
+              </CardFooter>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <BotIcon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="font-headline text-xl">
+                    Autonomous AI Agents
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-muted-foreground">
+                  Understand the architecture behind AI agents that can reason, plan, and execute complex tasks on their own. The next step in AI evolution.
+                </p>
+              </CardContent>
+               <CardFooter>
+                 <Button asChild variant="secondary" size="sm">
+                    <Link href="/workshops">Explore Workshops</Link>
+                  </Button>
+              </CardFooter>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Combine className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="font-headline text-xl">
+                    Multimodal Models
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-muted-foreground">
+                  Go beyond text. Explore models that seamlessly understand and process information from images, audio, and video simultaneously.
+                </p>
+              </CardContent>
+               <CardFooter>
+                 <Button asChild variant="secondary" size="sm">
+                    <Link href="/workshops">Explore Workshops</Link>
+                  </Button>
+              </CardFooter>
+            </Card>
           </div>
         </div>
       </section>
