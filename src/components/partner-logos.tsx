@@ -13,7 +13,7 @@ export function PartnerLogos() {
     <div className="w-full py-12 bg-secondary/50">
       <div className="container mx-auto px-4 md:px-6">
         <h3 className="text-center text-base font-semibold text-muted-foreground tracking-wider uppercase mb-8">
-          Certifications from Industry Leaders
+          Partners with Industry Leaders
         </h3>
         <div className="relative flex overflow-hidden group">
           <div className="flex animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]">
